@@ -1,7 +1,7 @@
 import React from 'react'
 import './Contador.css'
 
-export const Contador = ({titulo, contador, setContador}) => {
+export const Contador = ({titulo, contador, setContador, color}) => {
     const sumar = () => {
         setContador(contador+1);
     }
@@ -11,7 +11,7 @@ export const Contador = ({titulo, contador, setContador}) => {
     }
 
     return (
-        <div className='contador'>
+        <div className='contador' style={ { backgroundColor: `${color}`} }>
             <div>
                 {titulo}
             </div>

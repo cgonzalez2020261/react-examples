@@ -1,10 +1,10 @@
 import React from 'react'
 import './Cartel.css'
 
-export const Cartel = ({titulo, contador}) => {
+export const Cartel = ({titulo, contador, color}) => {
 
   return (
-      <div className='cartel'>
+      <div className='cartel' style={ { backgroundColor: `${color}`} }>
         <span>{titulo}: {contador}</span>
       </div>
   )
