@@ -1,0 +1,26 @@
+.carro{
+    height: 70px;
+    width: 400px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 5px #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carro div{
+}
+
+.carro img{
+    
+}
+
+.par{
+    border-color: rgb(36, 74, 243);
+}
+
+.impar{
+    border-color: rgb(36, 152, 236);
+}
