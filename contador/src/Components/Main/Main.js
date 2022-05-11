@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { cambiarColor } from '../../shared/cambiarColor';
 import { Cartel } from '../Cartel/Cartel';
 import { Contador } from '../Contador/Contador';
+import ContadorClase from '../ContadorClase/ContadorClase';
+import ContadorFuncion from '../ContadorFuncion/ContadorFuncion';
 import './Main.css'
 
 const Main = () => {
@@ -13,7 +15,6 @@ const Main = () => {
     useEffect(() => {
         // Ejecutar este codigo cuando el estado monitoreado cambie.
         cambiarColor(contador, setColor)
-        console.log(color)
         // Monitorear el contador.
     }, [contador])
     
@@ -21,6 +22,10 @@ const Main = () => {
         <div className='container'>
             <Cartel titulo={titulo} contador={contador} color={color}/>
             <Contador titulo={titulo} contador={contador} setContador={setContador} color={color} />
+            <hr /><hr />
+            <ContadorClase />
+            <hr /><hr />
+            <ContadorFuncion />
         </div>
     )
 }
