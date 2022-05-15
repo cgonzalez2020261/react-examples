@@ -3,28 +3,22 @@ import Login from '../Login/Login';
 import Registro from '../Registro/Registro';
 import Navigation from '../Navigation/Navigation';
 import {
-    BrowserRouter as Router,
-    Switch,
+    Routes,
     Route,
-    Redirect
+    Navigate
 } from "react-router-dom";
 
 export const Main = () => {
-  return (
-      <>
-      <Router>
-        <Navigation />
-        <Switch>
-            <Route path="/login">
-                <Login />
-            </Route>
-            <Route path="/registro">
-                <Registro />
-            </Route>
-            <Redirect from="/" to="login" />
-        </Switch>  
-      </Router>
-      </>
+    return (
+        <>
+            <Navigation />
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/registro" element={<Registro />} />
+                <Route path="/" element={<Navigate to="/login" replace />} />
+                <Route path="*" element={<Navigate to="/login" replace />} />
+            </Routes>
+        </>
 
-  )
+    )
 }
