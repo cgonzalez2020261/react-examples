@@ -131,31 +131,31 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {['Iniciar Sesión', 'Registrar usuario'].map((text, index) => (
-            <Link to={ index === 0 ? '/login' : '/registro' }>
-                <ListItem href='login' key={text} disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                        sx={{
-                        minHeight: 48,
-                        justifyContent: open ? 'initial' : 'center',
-                        px: 2.5,
-                        }}
-                    >
-                        <ListItemIcon
-                        sx={{
-                            minWidth: 0,
-                            mr: open ? 3 : 'auto',
-                            justifyContent: 'center',
-                        }}
-                        >
-                        {index === 0 ? <LoginIcon /> : <PersonAddIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                    </ListItemButton>
-                </ListItem>
+            <Link className='linksDecoration' to={index === 0 ? '/login' : '/registro'}>
+              <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {index === 0 ? <LoginIcon /> : <PersonAddIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
             </Link>
           ))}
         </List>
-        <Divider /> 
+        <Divider />
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
